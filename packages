@@ -1,13 +1,11 @@
 locales console-data console-common
 initramfs-tools mdadm lvm2
-grub-pc os-prober
 bzip2 file less lsof most pciutils resolvconf screen ssh strace usbutils vim w3m zsh
+tree
 rsync
 postfix
 lsb-release
 acpi-support-base
-vlan
-bridge-utils
-ifenslave
 cryptsetup
-isc-dhcp-client
+network-manager network-manager-config-connectivity-debian network-manager-customsettings network-manager-customsettings-cups network-manager-defaultprinter network-manager-defaultprinter-cups network-manager-dev network-manager-gnome network-manager-iodine network-manager-iodine-gnome network-manager-l2tp network-manager-l2tp-gnome network-manager-openconnect network-manager-openconnect-gnome network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-ssh network-manager-ssh-gnome network-manager-strongswan network-manager-vpnc network-manager-vpnc-gnome
+

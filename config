@@ -224,4 +224,54 @@
 # Default: 'no'
 # REMOVE_CONFIGS='yes'
 
+# --------------- BTRFS ----------------------
+# The following section is for the btrfs-extension to install debian on btrfs with a special subvolume-structure
+#
+# There are two essential subvolumes. One for the system (BTRFSSYS), and one for the data, 
+# which should always stay current (BTRFSCUR), also in case of a system-rollback
+# Default: "@debian-${RELEASE}"
+# BTRFSSYS="@debian-${RELEASE}"
+
+# Default: '__ALWAYSCURRENT__'
+# BTRFSCUR='__ALWAYSCURRENT__'
+
+# List of subvolumes unter $BTRFSCUR. The subvolume-names are escaped with systemd-escape. 
+# For example, if you want an extra subvolume for /var/cache and /var/cache/mail, set in the list
+# "var-cache var-cache-mail". The order is relevant!
+# Default: "boot-grub-x86_64-efi home opt srv subs usr-local var-cache var-lib-mpd var-lib-named var-log var-opt var-spool var-spool-dovecot var-mail var-tmp var-virutal_machines var-www"
+# BTRFSSUBS='boot-grub-x86_64-efi home opt srv subs usr-local var-cache var-lib-mpd var-lib-named var-log var-opt var-spool var-spool-dovecot var-mail var-tmp var-virutal_machines var-www'
+
+# Create the BTRFS-subvolumes from BTRFSSUBS
+# Default: 'yes'
+# MKBTRFSSUBS='yes'
+
+# Mountoptions for the fstab. This mountoptions have variables "NO" and "RELATIME". 
+# This two are replaced in case of having a SSD to NO="no" and RELATIME="no" or a HDD to NO="" and RELATIME="rel"
+# For example NOspace_cache on SSD becomes to nospace_cache, on HDD it becomes space_cache.
+# The detection if it is a SSD or HDD is automatically and depends on the install-target
+# Default: "defaults,compress=lzo,NOspace_cache,NOinode_cache,RELATIMEatime"
+# BTRFSMOUNTOPTS="defaults,compress=lzo,NOspace_cache,NOinode_cache,RELATIMEatime"
+#
+# Set some standard-programs
+#
+# awk
+# Default: "/usr/bin/mawk"
+# AWK="/usr/bin/awk"
+
+# btrfs
+# Default: "/bin/btrfs"
+# BTRFS="/usr/bin/btrfs"
+
+# blkid
+# Default: "/sbin/blkid"
+# BLKID="/sbin/blkid"
+
+# findmnt
+# Default: "/bin/findmnt"
+# FINDMNT="/bin/findmnt"
+
+# systemd-escape
+# Default: "/bin/systemd-escape"
+# SYSTEMDESCAPE="/usr/bin/systemd-escape"
+
 ## END OF FILE #################################################################
